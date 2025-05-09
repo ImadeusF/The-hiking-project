@@ -26,10 +26,10 @@ class HikesComments
         $date_comment = new \DateTime();
         $posted = $date_comment->format("Y-m-d H:i:s");
 
-        $message = $newData->addCommentHicke($hikescomments, $hikeid, $userid, $posted);
+        $newData->addCommentHicke($hikescomments, $hikeid, $userid, $posted);
 
         // ✅ Redirection vers la page de détails de la randonnée
-        header('Location: ' . BASE_PATH . '/hikes/' . $hikeid . '?message=' . urlencode($message));
+        header('Location: ' . BASE_PATH . '/hikes/' . $hikeid);
         exit();
     }
 
