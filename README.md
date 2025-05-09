@@ -6,6 +6,7 @@ It allows users to browse, create, and manage hiking trails based on various cri
 Each hike is categorized, and the interface adapts visually depending on the selected category.
 
 ### ✨ Key Features
+- Routing System: Built-in lightweight router (Altorouter) to manage clean and maintainable URL routes.
 - User Management: Registration, profile editing, and account deletion.
 - Hike Management: Create, update, and delete hikes.
 - Comment System: Users can leave comments on hikes to share feedback or tips.
