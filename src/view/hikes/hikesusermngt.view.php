@@ -1,4 +1,5 @@
 <?php
+//view/hikes/hikesusermngt.view.php 
 ob_start();
 $user_id = isset($_SESSION['user']['sess_id']) ? $_SESSION['user']['sess_id'] : null;
 ?>

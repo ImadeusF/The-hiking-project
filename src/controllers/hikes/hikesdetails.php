@@ -22,12 +22,12 @@ class HikesDetails
 
         $hike = $HickesDetails->getHikesDetails($hikesId);
         $hikesComments_array = $HickesDetails->getHikesComments($hikesId);
-        
+
         //we check if the user connected is an admin, if yes, he will be able to edit and delete comments (see hikesdetails.view.php) condition || ($user_admin == "1")
         $newData = new UserModel($env);
         $user_id = isset($_SESSION['user']['sess_id']) ? $_SESSION['user']['sess_id'] : null;
         $user_admin = $newData->getUserAdminStatus($user_id);
-        
+
         //$productComments = $HickesDetails->getProductComments($codeProduct);
         require(__DIR__ . '/../../view/hikes/hikesdetails.view.php');
     }
@@ -39,8 +39,8 @@ class HikesDetails
         $message = $HickesDetails->deleteHike($hikesId);
 
         $user_id = isset($_SESSION['user']['sess_id']) ? $_SESSION['user']['sess_id'] : null;
-        
-        echo "<script>window.location.href='" . BASE_PATH . "/user/hikesmngt/" . $user_id . "?message=" . urlencode($message) . "'</script>";
-
+    
+        header('Location: ' . BASE_PATH . '/user/hikesmngt/' . $user_id . '?message=' . urlencode($message));
+        exit();
     }
 }

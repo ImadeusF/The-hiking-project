@@ -1,4 +1,5 @@
 <?php
+
 namespace Application\Controllers\User;
 
 class Logout
@@ -7,6 +8,7 @@ class Logout
     {
         //session_start();
         session_destroy();
-        echo "<script>window.location.href='" . BASE_PATH . "'</script>";
+        header('Location: ' . BASE_PATH);
+        exit();
     }
 }

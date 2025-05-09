@@ -31,6 +31,7 @@
     <title>Hikes</title>
 </head>
 <?php
+ob_start();
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 error_reporting(E_ALL);
@@ -38,7 +39,8 @@ error_reporting(E_ALL);
 header('Content-Type: text/html; charset=utf-8');
 //path to the project's root folder (for all the links)
 define('BASE_PATH', 'https://www.imadeus.be/others/hiking-project');
-
+// en localhost
+// define('BASE_PATH', 'http://localhost/hiking-project');
 require_once __DIR__ . '/vendor/autoload.php';
 require_once('src/controllers/header.php');
 require_once('src/controllers/homepage.php');
@@ -65,6 +67,8 @@ use Application\Controllers\{
 
 $router = new AltoRouter();
 $router->setBasePath('/others/hiking-project');
+// en localhost
+// $router->setBasePath('/hiking-project');
 
 $router->map('GET', '/', function () use ($env) {
     (new Homepage())->execute($env);
@@ -169,3 +173,4 @@ if (is_array($match) && is_callable($match['target'])) {
     //Page 404
     require(__DIR__ . '/src/view/404.view.php');
 }
+ob_end_flush();

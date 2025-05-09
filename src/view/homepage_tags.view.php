@@ -1,4 +1,6 @@
-<?php ob_start(); ?>
+<?php 
+//view/homepage_tags.view.php
+ob_start(); ?>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto max-w-screen-xl py-8">
   <?php

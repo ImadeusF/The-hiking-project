@@ -1,4 +1,5 @@
 <?php
+//view/hikes/hikesdetails.view.php
 ob_start();
 $user_identifiant = isset($_SESSION['user']['sess_user']) ? $_SESSION['user']['sess_user'] : null;
 $user_id = isset($_SESSION['user']['sess_id']) ? $_SESSION['user']['sess_id'] : null;
@@ -63,6 +64,7 @@ $user_id = isset($_SESSION['user']['sess_id']) ? $_SESSION['user']['sess_id'] : 
         <!-- Comment form -->
         <?php if (!empty($user_identifiant)) { ?>
             <div class="max-w-screen-xl mx-auto pb-5 sm:pb-10 md:pb-16 relative">
+                
                 <div class="max-w-3xl mx-auto">
                     <div class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
                         <div class="bg-white p-5 sm:p-10">
@@ -71,7 +73,7 @@ $user_id = isset($_SESSION['user']['sess_id']) ? $_SESSION['user']['sess_id'] : 
                             foreach ($hikesComments_array as $hcomment) { ?>
                                 <div class="my-4 p-4 bg-gray-100 rounded shadow">
                                     <h2 class="font-bold text-lg mb-2">Comment (n°<?= $commentHike_compteur ?>):</h2>
-                                    <p class="text-gray-700"><?= $hcomment['hikes_comments'] ?></p>
+                                    <p class="text-gray-700"><?= htmlspecialchars($hcomment['hikes_comments']) ?></p>
                                     <?php // The user can delete his own comments
                                     //If the user own the comment or if he is an admin, he can edit
                                     //if (($user_id) == $hcomment['id_user'] || $user_admin == "1") { 
@@ -90,7 +92,7 @@ $user_id = isset($_SESSION['user']['sess_id']) ? $_SESSION['user']['sess_id'] : 
                                 <?php
                                 $posted_date = new DateTime($hcomment['posted_at']);
                                 $formatted_date = $posted_date->format("F d, Y - H\hi"); ?>
-                                <div class="mt-2 text-sm text-gray-600">Posted by: <?= $hcomment['nickname'] . " (" . $formatted_date . ")" ?></div>
+                                <div class="mt-2 text-sm text-gray-600">Posted by: <?= htmlspecialchars($hcomment['nickname']) . " (" . $formatted_date . ")" ?></div>
                             <?php $commentHike_compteur++;
                             } ?>
                             <?php if ($error_com) { ?>

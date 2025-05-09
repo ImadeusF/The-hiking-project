@@ -1,4 +1,6 @@
-<?php ob_start(); ?>
+<?php ob_start(); 
+//view/user/login.view.php
+?>
 <div class="relative min-h-screen flex items-center justify-center bg-gray-50 py-10 px-6 sm:px-6 lg:px-8 ">
     <img src="<?php echo BASE_PATH; ?>/public/images/forest.webp" alt="Background Image" class="absolute inset-0 h-full w-full object-cover z-0">
     <div class="relative max-w-sm w-full space-y-8 z-10 p-10 bg-white bg-opacity-25 rounded-md border border-white" style="backdrop-filter: blur(10px);">

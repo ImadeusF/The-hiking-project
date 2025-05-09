@@ -25,7 +25,12 @@ class HikesComments Extends DatabaseConnection
         $statement->bindParam(':id_user', $iduser, PDO::PARAM_INT);
         $statement->bindParam(':posted_at', $posted, PDO::PARAM_STR);
         $result = $statement->execute();
-        return $result;
+        
+        if ($result) {
+            return "Hike comment added successfully.";
+        } else {
+            return "Failed to add comment hike.";
+        }
     }
 
     public function delCommentHicke($commentid)

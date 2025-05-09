@@ -1,3 +1,4 @@
+<!-- //view/404.view.php -->
 <div id="leaves">
     <i></i>
     <i></i>

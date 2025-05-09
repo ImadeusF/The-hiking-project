@@ -22,7 +22,7 @@ class Hikesusermngt
         $newData = new UserModel($env);
         $user_id = isset($_SESSION['user']['sess_id']) ? $_SESSION['user']['sess_id'] : null;
         $user_admin = $newData->getUserAdminStatus($user_id);
-        
+
         require(__DIR__ . '/../../view/hikes/hikesusermngt.view.php');
     }
 
@@ -30,7 +30,7 @@ class Hikesusermngt
     {
         $newData = new Hickeslist($env);
         $tags = new TagsModel($env);
-        
+
         $tagList = $tags->getTags();
         $hikes = $newData->EditHikes($hikeid);
         require(__DIR__ . '/../../view/hikes/hikesusermngtedit.view.php');
@@ -43,7 +43,7 @@ class Hikesusermngt
     public function SaveHikesUser($hikeid, $env, $input, $userid, $action)
     {
         $newData = new Hickeslist($env);
-        
+
         $name = htmlspecialchars($input['name']);
         $distance = htmlspecialchars($input['distance']);
         $duration = htmlspecialchars($input['duration']);
@@ -56,13 +56,15 @@ class Hikesusermngt
 
         if ($action == 'edithike') {
             $message = $newData->SaveHikes($hikeid, $name, $distance, $duration, $elevation_gain, $description, $updated_at, $id_tag);
-            echo "<script>window.location.href='" . BASE_PATH . "/user/hikesmngt/" . $userid . "?message=" . urlencode($message) . "'</script>";
-        } 
-        elseif ($action == 'saveaddhike') {
+
+            header('Location: ' . BASE_PATH . '/user/hikesmngt/' . $userid . '?message=' . urlencode($message));
+            exit();
+        } elseif ($action == 'saveaddhike') {
             $created_by = htmlspecialchars($userid);
             $created_at = $date_update->format("Y-m-d H:i:s");
             $message = $newData->SaveAddHikes($name, $distance, $duration, $elevation_gain, $description, $created_by, $created_at, $updated_at, $id_tag);
-            echo "<script>window.location.href='" . BASE_PATH . "/user/hikesmngt/" . $userid . "?message=" . urlencode($message) . "'</script>";
+            header('Location: ' . BASE_PATH . '/user/hikesmngt/' . $userid . '?message=' . urlencode($message));
+            exit();
         }
     }
 

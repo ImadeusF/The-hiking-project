@@ -1,5 +1,7 @@
 RewriteEngine On
 RewriteBase /others/hiking-project/
+# en localhost
+# RewriteBase /hiking-project/
 
 # Redirect Trailing Slashes If Not A Folder...
 RewriteCond %{REQUEST_FILENAME} !-d

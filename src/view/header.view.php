@@ -1,4 +1,5 @@
 <?php
+//view/header.view.php
 ob_start();
 //Display the session info after the registration
 $user_identifiant = isset($_SESSION['user']['sess_user']) ? $_SESSION['user']['sess_user'] : null;

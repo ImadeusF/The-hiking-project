@@ -1,4 +1,6 @@
-<?php ob_start();
+<?php 
+//view/homepage.view.php
+ob_start();
 $user_identifiant = isset($_SESSION['user']['sess_user']) ? $_SESSION['user']['sess_user'] : null;
 $user_id = isset($_SESSION['user']['sess_id']) ? $_SESSION['user']['sess_id'] : null;
 ?>

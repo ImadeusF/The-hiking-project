@@ -1,4 +1,6 @@
-<?php ob_start(); ?>
+<?php
+//view/footer.view.php
+ob_start(); ?>
 
 <p>&copy; Eno-Damien Hiking project</p>
 

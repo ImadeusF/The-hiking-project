@@ -1,4 +1,5 @@
 <?php
+// view/hikes/hikesusermngtadd.view.php
 ob_start();
 $user_id = isset($_SESSION['user']['sess_id']) ? $_SESSION['user']['sess_id'] : null;
 ?>
@@ -33,7 +34,7 @@ $user_id = isset($_SESSION['user']['sess_id']) ? $_SESSION['user']['sess_id'] : 
             <select name="id_tags" id="id_tags" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                 <?php
                 foreach ($tagList as $tag) {
-                    echo "<option value='{$tag['id']}'>{$tag['name']}</option>";
+                    echo "<option value='" . htmlspecialchars($tag['id']) . "'>" . htmlspecialchars($tag['name']) . "</option>";
                 }
                 ?>
             </select>

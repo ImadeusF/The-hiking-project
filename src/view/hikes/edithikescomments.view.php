@@ -1,5 +1,9 @@
-<?php ob_start(); ?>
+<?php ob_start();
+//view/hikes/edithikecomments.view.php
+?>
+
 <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+    
     <div class="max-w-3xl mx-auto">
         <div class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
             <div class="bg-white p-5 sm:p-10">

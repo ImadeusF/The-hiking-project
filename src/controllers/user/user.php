@@ -101,18 +101,18 @@ class User
                         // $phpmailer->isHTML(true);                      // Set email format to HTML
                         // $phpmailer->Subject = 'Welcome to our website!';
                         // $phpmailer->Body = '
-// echo '
-// <div style="background-color: #edf2f7; padding: 20px;">
-//     <div style="max-width: 600px; margin: auto; background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);">
-//         <h2 style="color: #2d3748; margin-bottom: 20px;">Welcome to our website!</h2>
-//         <p style="color: #4a5568; line-height: 1.6;">Dear ' . $nickname . ',</p>
-//         <p style="color: #4a5568; line-height: 1.6;">Thank you for registering on our website. We are excited to have you on board.</p>
-//         <p style="color: #4a5568; line-height: 1.6;">If you have any questions, feel free to reply to this email. We\'re here to help!</p>
-//         <p style="color: #4a5568; line-height: 1.6;">Best regards,</p>
-//         <p style="color: #4a5568; line-height: 1.6;"><b>Eno&Damien</b></p>
-//     </div>
-// </div>
-// ';
+                        // echo '
+                        // <div style="background-color: #edf2f7; padding: 20px;">
+                        //     <div style="max-width: 600px; margin: auto; background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);">
+                        //         <h2 style="color: #2d3748; margin-bottom: 20px;">Welcome to our website!</h2>
+                        //         <p style="color: #4a5568; line-height: 1.6;">Dear ' . $nickname . ',</p>
+                        //         <p style="color: #4a5568; line-height: 1.6;">Thank you for registering on our website. We are excited to have you on board.</p>
+                        //         <p style="color: #4a5568; line-height: 1.6;">If you have any questions, feel free to reply to this email. We\'re here to help!</p>
+                        //         <p style="color: #4a5568; line-height: 1.6;">Best regards,</p>
+                        //         <p style="color: #4a5568; line-height: 1.6;"><b>Eno&Damien</b></p>
+                        //     </div>
+                        // </div>
+                        // ';
                         // $phpmailer->AltBody = 'Welcome to our website! Dear ' . $nickname . ', Thank you for registering on our website. We are excited to have you on board. If you have any questions, feel free to reply to this email. We\'re here to help! Best regards, Your Team';
                         // $phpmailer->send();
                     }
@@ -147,7 +147,7 @@ class User
             $newData->DelAllCommentHicke($userid);
 
             session_destroy();
-            echo "<script>window.location.href='" . BASE_PATH . "'</script>";
+            header('Location: ' . BASE_PATH);
             exit();
         }
 
