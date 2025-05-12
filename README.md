@@ -33,9 +33,6 @@ Each hike is categorized, and the interface adapts visually depending on the sel
 <div style="display: inline-block; margin-right: 5px;">
   <img alt="Static Badge" src="https://img.shields.io/badge/frontend%20-%20html5%20-%20orange?style=for-the-badge">
 </div>
-<div style="display: inline-block; margin-right: 5px;">
-  <img alt="Static Badge" src="https://img.shields.io/badge/frontend%20-%20scss%20-%20pink?style=for-the-badge">
-</div>
 
 ---
 
